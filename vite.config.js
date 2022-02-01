@@ -13,7 +13,7 @@ export default defineConfig({
 		emptyOutDir: true,
 		rollupOptions: {
 			input: {
-				main: resolve(root, 'pages', 'index', 'index.html'),
+				main: './index.html',
 				about: resolve(root, 'pages', 'about', 'index.html'),
 				contact: resolve(root, 'pages', 'contact', 'index.html'),
 			},
@@ -21,22 +21,13 @@ export default defineConfig({
 	},
 	publicDir: 'public',
 	server: {
-		open: '/pages/index/index.html',
+		open: true,
 		port: 8080,
 		hmr: { overlay: false },
 	},
 	preview: {
 		host: true,
 	},
-
-	css: {
-		preprocessorOptions: {
-			scss: {
-				sourcemap: true,
-			},
-		},
-	},
-
 	plugins: [
 		handlebars({
 			partialDirectory: resolve(__dirname, 'src', 'partials'),
